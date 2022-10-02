@@ -1,0 +1,8 @@
+D:\I KNOW\TUGAY\BANK\bank\bank\bin\Debug\bank.exe.config
+D:\I KNOW\TUGAY\BANK\bank\bank\bin\Debug\bank.exe
+D:\I KNOW\TUGAY\BANK\bank\bank\bin\Debug\bank.pdb
+D:\I KNOW\TUGAY\BANK\bank\bank\obj\Debug\bank.csproj.AssemblyReference.cache
+D:\I KNOW\TUGAY\BANK\bank\bank\obj\Debug\bank.csproj.SuggestedBindingRedirects.cache
+D:\I KNOW\TUGAY\BANK\bank\bank\obj\Debug\bank.csproj.CoreCompileInputs.cache
+D:\I KNOW\TUGAY\BANK\bank\bank\obj\Debug\bank.exe
+D:\I KNOW\TUGAY\BANK\bank\bank\obj\Debug\bank.pdb
