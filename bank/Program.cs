@@ -18,6 +18,20 @@ namespace bank
             account1.Password = 1234;
             account1.CustomerNo = 1;
             accounts.Add(account1);
+            CustomerAccount account2 = new CustomerAccount();
+            account2.Name = "Burak";
+            account2.Surname = "Gülmez";
+            account2.Username = "burakgulmez";
+            account2.Password = 2121;
+            account2.CustomerNo = 2;
+            accounts.Add(account2);
+            CustomerAccount account3 = new CustomerAccount();
+            account3.Name = "Tugay";
+            account3.Surname = "Evci";
+            account3.Username = "tugayevci";
+            account3.Password = 1111;
+            account3.CustomerNo = 3;
+            accounts.Add(account3);
 
 
             bool login = false;
@@ -30,9 +44,15 @@ namespace bank
                 string username = Console.ReadLine();
                 Console.WriteLine("Password: ");
                 int password = Convert.ToInt32(Console.ReadLine());
+                //string result = accounts.Find(account1.Username, account2.Username,account3.Username );
+                //foreach (var item in accounts)
+                //{
+                //    string item1 = item.Username;
+                //    int item2 = item.Password;
+                //}
                 if (username == account1.Username && password == account1.Password)
                 {
-                    login= true;
+                    login = true;
                     Console.WriteLine($"Dear {account1.Name} {account1.Surname}, please select the action you want to take.");
                     Action();
 
@@ -41,6 +61,7 @@ namespace bank
                 {
                     Console.WriteLine("Username or password is incorrect, please try again.");
                 }
+
             }
             
                 
@@ -50,6 +71,8 @@ namespace bank
         {
             Console.WriteLine("1- View Balance");
             Console.WriteLine("2- Send Money");
+            Console.WriteLine("3- Deposit Money");
+
             string choice = Console.ReadLine();
             Program program = new Program();
             if (choice == "1")
@@ -60,9 +83,23 @@ namespace bank
             {
                 program.SendMoney();
             }
-            
+            else if (choice == "3")
+            {
+                program.DepositMoney();
+            }
+
         }
-        private int balance=1000;
+        private int balance = 1000;
+        public int DepositMoney()
+        {
+            Console.WriteLine("Please enter the amount you wish to deposit.");
+            int deposit = Convert.ToInt32(Console.ReadLine());
+            balance += deposit;
+            Console.WriteLine("Balance: " + balance + " $");
+            Action();
+            return balance;
+        }
+
         public int SendMoney()
         {
             

@@ -14,12 +14,7 @@ namespace bank
         public string Username { get; set; }
         public int Password { get; set; }
         public int CustomerNo { get; set; }
-        public void Users(string username, int password, int customerNo)
-        {
-            this.Username = username;
-            this.Password = password;
-            this.CustomerNo = customerNo;
-        }
+      
         
 
 
