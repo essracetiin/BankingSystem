@@ -8,7 +8,7 @@ namespace bank
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             List<CustomerAccount> accounts = new List<CustomerAccount>();
             CustomerAccount account1 = new CustomerAccount();
@@ -44,22 +44,17 @@ namespace bank
                 string username = Console.ReadLine();
                 Console.WriteLine("Password: ");
                 int password = Convert.ToInt32(Console.ReadLine());
-                //string result = accounts.Find(account1.Username, account2.Username,account3.Username );
-                //foreach (var item in accounts)
-                //{
-                //    string item1 = item.Username;
-                //    int item2 = item.Password;
-                //}
-                if (username == account1.Username && password == account1.Password)
+                
+                var account = accounts.Find(x => x.Username == username && x.Password == password);
+                if (account == null)
                 {
-                    login = true;
-                    Console.WriteLine($"Dear {account1.Name} {account1.Surname}, please select the action you want to take.");
-                    Action();
-
+                    Console.WriteLine("Username or password is incorrect, please try again.");
                 }
                 else
                 {
-                    Console.WriteLine("Username or password is incorrect, please try again.");
+                    login = true;
+                    Console.WriteLine($"Dear {account.Name} { account.Surname}, please select the action you want to take.");
+                    Action();
                 }
 
             }
@@ -72,6 +67,7 @@ namespace bank
             Console.WriteLine("1- View Balance");
             Console.WriteLine("2- Send Money");
             Console.WriteLine("3- Deposit Money");
+            Console.WriteLine("4- Exit");
 
             string choice = Console.ReadLine();
             Program program = new Program();
@@ -86,6 +82,10 @@ namespace bank
             else if (choice == "3")
             {
                 program.DepositMoney();
+            }
+            else if (choice == "4")
+            {
+                Main();
             }
 
         }
